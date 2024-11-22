@@ -21,7 +21,7 @@ def setup_page():
     st.write("Upload an image or video and ask questions about it!")
 
 def load_api_key():
-    api_key = os.getenv("GROQ_API_KEY")
+    api_key = st.secrets["GROQ_API_KEY"]
     if not api_key:
         api_key = st.text_input("Enter your Groq API key:", type="password")
         if not api_key:
